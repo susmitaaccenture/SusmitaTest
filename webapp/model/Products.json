@@ -1,0 +1,35 @@
+{
+	"Proddata": [{
+		"Supplier": "Alpha Printers",
+		"Product": "Laser Professional Eco",
+		"Dimension": "51 x 46 x 30 cm",
+		"Weight": "32kg"
+	}, {
+		"Supplier": "Alpha Printers",
+		"Product": "Laser Basic",
+		"Dimension": "48 x 42 x 26 cm",
+		"Weight": "23kg"
+
+	}, {
+		"Supplier": "Alpha Printers",
+		"Product": "Laser Allround",
+		"Dimension": "53 x 50 x 65 cm",
+		"Weight": "17kg"
+	}, {
+		"Supplier": "Brainsoft",
+		"Product": "Smart Internet Antivirus",
+		"Dimension": "16 x 4 x 21 cm",
+		"Weight": "0.7kg"
+	}, {
+		"Supplier": "Brainsoft",
+		"Product": "Smart Firewall",
+		"Dimension": "17.9 x 4.2 x 23.1 cm",
+		"Weight": "0.9kg"
+	}, {
+		"Supplier": "Oxynum",
+		"Product": "Cordless Mouse",
+		"Dimension": "6 x 14.5 x 3.5 cm",
+		"Weight": "0.09kg"
+
+	}]
+}

@@ -1,0 +1,89 @@
+<mvc:View controllerName="ui5demo.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:viz="sap.viz.ui5.controls" xmlns:layout="sap.ui.layout" xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds"
+    	xmlns:viz.data="sap.viz.ui5.data" height="100%" xmlns:core="sap.ui.core">
+    <Page id="page" title="{i18n>title}">
+        <content>
+        	<HBox>
+							<Button text="CHARTS DEMO" press="onPress1" type="Emphasized" icon="sap-icon://accidental-leave"></Button>
+							<layoutData>
+								<FlexItemData growFactor="1"/>
+							</layoutData>
+							<viz:VizFrame id="oVizFrame" busy="false" busyIndicatorDelay="1000" visible="false" uiConfig="{ 'applicationSet': 'fiori' }" vizType="bar"
+								legendVisible="true">
+								<viz:dataset>
+									<viz.data:FlattenedDataset data="{mini>/book}">
+										<viz.data:dimensions>
+											<viz.data:DimensionDefinition name="Item Category" value="{mini>Item Category}"/>
+										</viz.data:dimensions>
+										<viz.data:measures>
+											<viz.data:MeasureDefinition group="1" name="Revenue" value="{mini>Revenue}"/>
+											<viz.data:MeasureDefinition group="1" name="Cost" value="{mini>Cost}"/>
+											<viz.data:MeasureDefinition group="1" name="Profit" value="{mini>Profit}"/>
+										</viz.data:measures>
+									</viz.data:FlattenedDataset>
+								</viz:dataset>
+								<viz:feeds>
+									<viz.feeds:FeedItem id="value1" uid="primaryValues" type="Measure" values="Revenue"/>
+									<viz.feeds:FeedItem id="value2" uid="primaryValues" type="Measure" values="Cost"/>
+									<viz.feeds:FeedItem id="value3" uid="primaryValues" type="Measure" values="Profit"/>
+									<viz.feeds:FeedItem uid="categoryAxis" type="Dimension" values="Item Category"/>
+								</viz:feeds>
+							</viz:VizFrame>
+							<VBox>
+								<Button text="PROPERTY BINDING" type="Accept" press="onclick" icon="sap-icon://accidental-leave"></Button>
+								<Select id="DEMO" visible="false">
+									<core:ListItem text="america"/>
+									<core:ListItem text="UK"/>
+									<core:ListItem text="INDIA"/>
+									<core:ListItem text="AUS"/>
+								</Select>
+							</VBox>
+							<layoutData>
+								<FlexItemData growFactor="1"/>
+							</layoutData>
+							<VBox>
+								<Button text="AGGRIGATION BINDING" type="Reject" press="onpress2" icon="sap-icon://accidental-leave"></Button>
+								<Table id="tabId" items="{Product>/Proddata}" visible="false">
+									<columns>
+										<Column mergeDuplicates="true">
+											<Text text="Supplier"></Text>
+										</Column>
+										<Column mergeDuplicates="true">
+											<Text text="Product"></Text>
+										</Column>
+										<Column>
+											<Text text="Dimension"></Text>
+										</Column>
+										<Column>
+											<Text text="Weight"/>
+										</Column>
+									</columns>
+									<items>
+										<ColumnListItem type="Active">
+											<cells>
+												<Text text="{Product>Supplier}"></Text>
+												<Text text="{Product>Product}"></Text>
+												<Text text="{Product>Dimension}"></Text>
+												<Text text="{Product>Weight}"></Text>
+											</cells>
+										</ColumnListItem>
+									</items>
+								</Table>
+							</VBox>
+							<layoutData>
+								<FlexItemData growFactor="1"/>
+							</layoutData>
+							<VBox>
+								<Button text="ELEMENT BINDING" press="onpress3" type="Transparent" icon="sap-icon://accidental-leave"></Button>
+								<Link id="tab" text="Introduction to Element Binding" visible="false" target="blank"
+									href="https://sapui5.hana.ondemand.com/1.36.6/docs/guide/91f05e8b6f4d1014b6dd926db0e91070.html"/>
+							</VBox>
+							<layoutData>
+								<FlexItemData growFactor="1"/>
+							</layoutData>
+							<Button text="EXPRESSION BINDING" press="onpress4" icon="sap-icon://accidental-leave"/>
+						</HBox>
+        </content>
+    </Page>
+</mvc:View>
